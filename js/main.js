@@ -1,3 +1,16 @@
+// Slider
+$('.slider__item').flickity({
+    cellAlign: 'left',
+    contain: true,
+    prevNextButtons: false,
+    autoPlay: 3000,
+    pageDots: false,
+    draggable: false,
+    setGallerySize: false,
+    pauseAutoPlayOnHover: false
+})
+
+
 $(window).on('load', function () {
     $('.svg').svgToInline();
 })
@@ -51,17 +64,7 @@ $('.backtop a').on('click', function (e) {
 
 })
 
-// Slider
-$('.slider__item').flickity({
-    cellAlign: 'left',
-    contain: true,
-    prevNextButtons: false,
-    autoPlay: 3000,
-    pageDots: false,
-    draggable: false,
-    setGallerySize: false,
-    pauseAutoPlayOnHover: false
-})
+
 
 
 
