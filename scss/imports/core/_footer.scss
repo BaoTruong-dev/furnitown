@@ -7,6 +7,7 @@ footer {
   background-color: $primary-cl;
   color: $white-cl;
   height: 530px;
+  @include transition($t $cubic);
   .container {
     position: relative;
     height: 100%;

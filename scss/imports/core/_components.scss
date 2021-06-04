@@ -743,6 +743,11 @@
   }
 }
 
+.move {
+  @include transform(translateX(300px));
+  @include transition($t $cubic);
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,

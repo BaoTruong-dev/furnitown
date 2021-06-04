@@ -17,9 +17,15 @@ $(window).on('load', function () {
 
 // Menu left
 let menuLeft = $('.menu__left');
+let slider = $('.slider');
+let homePlace = $('.place');
+let footer = $('footer');
 menuLeft.on('click', (e) => {
     e.stopPropagation();
     $('.menu-fixed').toggleClass('active');
+    slider.addClass('move');
+    homePlace.addClass('move');
+    footer.addClass('move')
 })
 
 $('.mobile-nav .menu').on('click', (e) => {
@@ -36,10 +42,16 @@ $('.menu-fixed .menu').on('click', (e) => {
 $('.cancel').on('click', (e) => {
     e.preventDefault()
     $('.menu-fixed').removeClass('active');
+    slider.removeClass('move');
+    homePlace.removeClass('move');
+    footer.removeClass('move')
 })
 
 $(document).on('click', (e) => {
     $('.menu-fixed').removeClass('active');
+    slider.removeClass('move');
+    homePlace.removeClass('move');
+    footer.removeClass('move')
 })
 
 // Scroll menu visible
@@ -63,7 +75,6 @@ $('.backtop a').on('click', function (e) {
     })
 
 })
-
 
 
 
