@@ -278,12 +278,12 @@
               position: absolute;
               height: 0.5px;
               @include hidden;
-              @include transition($t $cubic);
+              @include transition($t);
               @include transform(translateX(-40px) scale(0));
               @include transform-origin(left center);
             }
             &:hover::after {
-              @include transition($t $cubic);
+              @include transition($t);
               @include transform-origin(left right);
               @include visible;
               @include transform(translateX(0) scale(1));
