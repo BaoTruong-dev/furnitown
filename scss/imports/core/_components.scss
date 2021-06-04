@@ -17,12 +17,12 @@
       top: 361px;
     }
   }
-  &.ipadpro {
-    top: 30vh;
-  }
   @include tablet {
     --size: 150px;
     top: 40vh;
+    &.ipadpro {
+      top: 30vh;
+    }
   }
   @include tablet_lc {
     display: none;
