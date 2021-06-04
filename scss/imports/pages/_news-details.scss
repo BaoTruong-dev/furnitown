@@ -1,0 +1,122 @@
+.news__details {
+  .container {
+    @include tablet {
+      padding: 0 15px;
+    }
+    height: 100%;
+    width: 100%;
+    padding: 0 100px;
+  }
+  .banner {
+    @include mobile {
+      padding: 90px 0 35px 0;
+    }
+    height: 650px;
+    width: 100%;
+    padding: 180px 0 70px 0;
+    .container {
+      .img {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        img {
+          min-height: 100%;
+          min-width: 100%;
+          max-height: 100%;
+          position: absolute;
+          object-fit: cover;
+          left: 50%;
+          @include transform(translateX(-50%));
+        }
+      }
+    }
+  }
+  .text-news {
+    .container {
+      .details__box-news {
+        max-width: 770px;
+        .general-title {
+          font-size: 20px;
+          letter-spacing: 1px;
+          @include overtext(2);
+        }
+        .normal-text {
+          font-size: 12px;
+          max-width: 670px;
+          &.--bold {
+            margin: 40px 0;
+            font-family: ellb;
+            text-transform: uppercase;
+            @include overtext(2);
+          }
+          &.--italic {
+            font-family: ellmi;
+            font-style: italic;
+            @include overtext(1);
+          }
+          &.--last {
+            @include mobile {
+              margin-bottom: 60px;
+            }
+            margin: 30px 0 130px 0;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }
+  .related {
+    .container {
+      .related__title {
+        width: 100%;
+        position: relative;
+        & > h3 {
+          text-align: center;
+          font-size: 11px;
+        }
+
+        &::after {
+          @include tablet {
+            width: 35%;
+          }
+          @include mobile {
+            width: 25%;
+          }
+          content: "";
+          background-color: $black-cl;
+          width: 40%;
+          height: 1px;
+          display: block;
+          position: absolute;
+          bottom: 5px;
+          left: 0;
+        }
+        &::before {
+          @include tablet {
+            width: 35%;
+          }
+          @include mobile {
+            width: 25%;
+          }
+          content: "";
+          background-color: $black-cl;
+          width: 40%;
+          height: 1px;
+          display: block;
+          position: absolute;
+          bottom: 5px;
+          right: 0;
+        }
+      }
+      &__card {
+        .wrap-card {
+          .card__box {
+            .img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

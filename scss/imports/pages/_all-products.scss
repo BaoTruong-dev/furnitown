@@ -1,0 +1,63 @@
+.all-products {
+  .products__info {
+    position: relative;
+    min-height: 1900px;
+    .container {
+      .products__info-box {
+        .container__card {
+          min-height: unset;
+          &:not(:last-child) {
+            .wrap-card {
+              .card__box {
+                padding-bottom: 40px;
+              }
+            }
+          }
+          .wrap-card {
+            .card__box {
+              &:hover img {
+                @include transform(translate(-50%, -50%) scale(1.2));
+              }
+              @include tablet {
+                border: unset !important;
+              }
+              .img {
+                @include tablet {
+                  margin: 0 auto 40px auto;
+                }
+                max-width: 335px;
+                height: 365px;
+              }
+              & > h3 {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .more {
+      @include tablet {
+        margin-top: 30px;
+      }
+      margin-top: 100px;
+      position: absolute;
+      left: 50%;
+      @include transform(translateX(-50%));
+      a {
+        @include midFlex;
+        flex-direction: column;
+        svg {
+          @include transform(rotate(90deg));
+          margin-bottom: 30px;
+          * {
+            fill: #909090;
+          }
+        }
+        span {
+          color: #909090;
+        }
+      }
+    }
+  }
+}

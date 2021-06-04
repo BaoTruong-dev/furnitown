@@ -1,0 +1,198 @@
+.about {
+  @include desktop {
+    padding-top: 62px;
+  }
+  @include tablet {
+    padding-top: 50px;
+  }
+  padding: 80px 0 140px 0;
+  .intro {
+    @include desktop {
+      height: 740px;
+    }
+    @include tablet {
+      height: 730px;
+    }
+    @include mobile {
+      height: 420px;
+    }
+    height: 100vh;
+    text-align: center;
+    .container {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      padding: 0 20px;
+      .intro__box {
+        @include mid;
+        height: 100%;
+        width: 100%;
+        h2 {
+          @include mobile {
+            font-size: 40px;
+            margin-top: 40px;
+          }
+          color: $yellow-cl-dark;
+          margin-top: 80px;
+          font-weight: 700;
+        }
+        p {
+          @include mobile {
+            font-size: 10px;
+            line-height: 20px;
+          }
+          margin: 10px 0 35px 0;
+          font-size: 14px;
+          letter-spacing: 1px;
+          font-weight: 300;
+        }
+        .img {
+          @include desktop {
+            height: 501px;
+          }
+          @include mobile {
+            height: 250px;
+          }
+          max-width: 100%;
+          position: relative;
+          left: 50%;
+          @include transform(translateX(-50%));
+          width: 1030px;
+          height: 515px;
+          overflow: hidden;
+          img {
+            @include imgMid;
+          }
+        }
+      }
+    }
+  }
+  .info {
+    margin: 40px 0 165px 0;
+    .container {
+      .info__intro {
+        position: relative;
+        max-width: 770px;
+        margin: 0 auto 265px auto;
+        text-align: center;
+        p {
+          margin: 0 auto;
+          @include mobile {
+            max-width: 280px;
+            font-size: 12px;
+            line-height: 35px;
+            min-height: 138px;
+          }
+          line-height: 46px;
+        }
+        &::before {
+          @include tablet {
+            top: 220px;
+          }
+          @include mobile {
+            top: 270px;
+          }
+          content: "";
+          position: absolute;
+          width: 235px;
+          height: 1px;
+          background-color: $black-cl;
+          left: 50%;
+          top: 230px;
+          @include transform(translateX(-50%) rotate(90deg));
+        }
+      }
+      .row {
+        .col-lg-6 {
+          position: relative;
+          .normal-text {
+            @include mobile {
+              font-size: 12px;
+              text-align: center;
+              line-height: 35px;
+            }
+            margin: 0 auto;
+            max-width: 350px;
+            text-align: left;
+            line-height: 46px;
+          }
+        }
+        .col-lg-6.right {
+          @include desktop {
+            min-width: 480px;
+          }
+          @include mobile {
+            min-width: 310px;
+          }
+          min-width: 500px;
+          min-height: 515px;
+          .info__img {
+            max-width: 100%;
+            margin-top: 115px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            img {
+              @include imgMid;
+            }
+          }
+        }
+      }
+    }
+  }
+  .director {
+    text-align: center;
+    .container {
+      .director__info {
+        .normal-text {
+          max-width: 690px;
+          margin: 0 auto;
+          line-height: 26px;
+          font-size: 12px;
+        }
+        .name {
+          margin: 35px 0 45px 0;
+          p:first-child {
+            margin-bottom: 15px;
+          }
+          p:last-child {
+            text-transform: none;
+          }
+        }
+        .img {
+          position: relative;
+          div {
+            max-width: 100%;
+            position: relative;
+            left: 50%;
+            @include transform(translateX(-50%));
+            width: 570px;
+            height: 265px;
+            overflow: hidden;
+            img {
+              min-width: 100%;
+              min-height: 100%;
+              @include mid;
+              object-fit: cover;
+            }
+          }
+          & > img {
+            position: absolute;
+            bottom: -12%;
+            right: 23%;
+          }
+        }
+        .believe {
+          margin: 80px 0 50px 0;
+          .normal-text {
+            margin: 0 auto;
+            max-width: 580px;
+            font-size: 12px;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+  }
+}

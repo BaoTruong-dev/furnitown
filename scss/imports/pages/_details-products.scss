@@ -1,0 +1,186 @@
+.details-products {
+  @include desktop {
+    --fontSizeBig: 25px;
+  }
+  --fontSizeBig: 32px;
+  padding: 110px 0;
+  .description {
+    @include mobile {
+      border: none;
+      margin-top: 50px;
+    }
+    border-bottom: 1px solid $black-cl;
+    border-top: 1px solid $black-cl;
+    .container {
+      height: 100%;
+      .description__box {
+        height: 100%;
+        display: flex;
+        @include mobile {
+          flex-direction: column;
+        }
+        .left {
+          @include mobile {
+            width: 100%;
+            padding-right: 0;
+          }
+          min-height: 100%;
+          width: 74%;
+          height: 100%;
+
+          padding-right: 70px;
+          .img {
+            width: 100%;
+            height: 540px;
+            position: relative;
+            margin-top: 50px;
+            img {
+              @include imgMid;
+              max-height: 100%;
+            }
+          }
+          .wrap-zoom {
+            display: flex;
+            flex-direction: row-reverse;
+            width: 100%;
+            .zoom {
+              @include midFlex;
+              background-color: $black-cl;
+              width: 100px;
+              height: 30px;
+              cursor: pointer;
+              span {
+                color: $white-cl;
+                margin-right: 20px;
+              }
+              img {
+                margin: 0;
+              }
+            }
+          }
+          .description__box--btn {
+            display: flex;
+            .click {
+              margin-right: 10px;
+            }
+          }
+        }
+        .right {
+          @include mobile {
+            border: none;
+            width: 100%;
+          }
+          border-left: 1px solid $black-cl;
+          min-height: 100%;
+          width: 26%;
+          height: 100%;
+          padding-left: 18px;
+          padding-bottom: 45px;
+          & > h3 {
+            font-size: var(--fontSizeBig);
+            text-transform: none;
+            margin-top: 35px;
+            letter-spacing: normal;
+          }
+          .info__box {
+            @include tablet {
+              flex-direction: column;
+              align-items: unset;
+            }
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            .normal-text {
+              font-weight: bold;
+            }
+            .current {
+              @include tablet {
+                margin-top: 10px;
+              }
+              font-size: 14px;
+              font-weight: bold;
+            }
+            &.--price {
+              @include tablet {
+                margin-bottom: 50px;
+              }
+              margin: 30px 0 70px 0;
+              .normal-text {
+                text-transform: uppercase;
+                font-size: 12px;
+              }
+              .current {
+                font-size: 16px;
+                font-weight: bold;
+              }
+            }
+          }
+          &__title {
+            .general-title {
+              @include mobile {
+                margin: 50px 0 10px 0;
+              }
+              text-transform: uppercase;
+              font-size: 11px;
+              font-weight: bold;
+              letter-spacing: normal;
+              margin: 80px 0 20px 0;
+            }
+            .normal-text {
+              letter-spacing: normal;
+              font-size: 12px;
+              font-weight: 500;
+              line-height: 20px;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .related {
+    .container {
+      @include desktop {
+        padding: 50px 15px;
+      }
+      padding: 100px 85px 80px 85px;
+      .related__title {
+        text-align: center;
+        font-size: 18px;
+        font-family: ellm;
+        font-weight: 300;
+      }
+      .container__card {
+        @include tablet {
+          padding: unset;
+        }
+        @include mobile_lc {
+          padding: unset;
+        }
+        padding: 45px 0 70px 0;
+        .wrap-card {
+          .card__box {
+            .img {
+              height: 365px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .products-contact {
+    @include mobile {
+      padding: 0 15px;
+    }
+    text-align: center;
+    .general-title {
+      font-size: 14px;
+      letter-spacing: normal;
+    }
+    .normal-text {
+      font-size: 12px;
+      margin: 20px 0 55px 0;
+    }
+  }
+}

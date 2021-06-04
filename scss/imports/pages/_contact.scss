@@ -1,0 +1,186 @@
+.contact {
+  @include mobile {
+    min-height: 1000px;
+  }
+  background: url("../img/contact/Untitled-2.jpg") no-repeat fixed center;
+  min-height: 800px;
+  background-size: cover;
+  position: relative;
+  .container {
+    @include desktop {
+      padding: 0 0 0 160px;
+    }
+    @include tablet {
+      padding: 0 0 0 150px;
+    }
+    @include mobile {
+      padding: 0 15px;
+    }
+    @include tablet_lc {
+      padding-left: 50px;
+    }
+    @include mid;
+    padding: 0 200px;
+    color: $white-cl;
+    text-transform: none;
+    .contact__info {
+      display: flex;
+      @include tablet {
+        flex-direction: column;
+      }
+      .text {
+        @include tablet {
+          width: 100%;
+        }
+        @include mobile_lc {
+          width: 100%;
+        }
+        width: 50%;
+        &__box-contact {
+          .us {
+            color: #bfc2c4;
+            max-width: 255px;
+            text-align: left;
+            line-height: 22px;
+          }
+        }
+      }
+      .address {
+        @include tablet {
+          width: 100%;
+        }
+        width: 50%;
+        &__box {
+          @include mobile {
+            width: 100%;
+          }
+          width: calc(100% - 50px);
+          display: flex;
+          justify-content: space-between;
+          @include tablet {
+            margin: 20px 0;
+          }
+        }
+        .address-info {
+          @include tablet {
+            margin-bottom: 20px;
+          }
+          @include mobile {
+            width: 100%;
+          }
+          width: calc(100% - 50px);
+          margin-top: 15px;
+          line-height: 18px;
+          &::first-line {
+            line-height: normal;
+          }
+        }
+      }
+    }
+    .contact__cus {
+      & > p {
+        max-width: 255px;
+        line-height: 22px;
+      }
+
+      form {
+        display: flex;
+        margin-top: 20px;
+        @include mobile {
+          flex-direction: column;
+        }
+        label {
+          display: block;
+          margin-bottom: 15px;
+        }
+        input,
+        textarea {
+          min-width: 100%;
+          background-color: transparent;
+          color: $white-cl;
+          outline: none;
+          border: none;
+        }
+        input {
+          border-bottom: 1px solid $yellow-cl;
+        }
+        .form-group {
+          width: calc(100% - 50px);
+          margin-bottom: 30px;
+        }
+        .left {
+          @include mobile {
+            width: 100%;
+          }
+          width: 50%;
+        }
+        .right {
+          @include mobile {
+            width: 100%;
+          }
+          width: 50%;
+          .form-group {
+            position: relative;
+            .area__box {
+              textarea {
+                resize: none;
+                line-height: 63px;
+                overflow: hidden;
+                height: 96px;
+                border-bottom: 1px solid $yellow-cl;
+                &::first-line {
+                  line-height: normal;
+                }
+              }
+              &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 47px;
+                height: 0.5px;
+                width: 100%;
+                background-color: $yellow-cl;
+              }
+              &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 85px;
+                height: 0.5px;
+                width: 100%;
+                background-color: $yellow-cl;
+              }
+            }
+          }
+          .button {
+            width: calc(100% - 50px);
+
+            display: flex;
+            flex-direction: row-reverse;
+            button {
+              width: 85px;
+              height: 35px;
+              outline: none;
+              border: 1px solid $yellow-cl;
+              background-color: $black-cl;
+              color: $white-cl;
+              cursor: pointer;
+              @include transition($t);
+              &:hover {
+                background-color: $yellow-cl;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.text__box-contact {
+  h3 {
+    color: $yellow-cl;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+}

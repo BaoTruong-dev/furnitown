@@ -1,0 +1,29 @@
+@keyframes moveDownInf {
+  0% {
+    @include transform(translate(-50%, 0));
+    opacity: 0;
+  }
+  50% {
+    @include transform(translate(-50%, 0));
+    opacity: 1;
+  }
+  100% {
+    @include transform(translate(-50%, 10px));
+    opacity: 0;
+  }
+}
+
+@keyframes moveTopInf {
+  0% {
+    @include transform(translate(0));
+    opacity: 0;
+  }
+  50% {
+    @include transform(translate(0));
+    opacity: 1;
+  }
+  100% {
+    @include transform(translateX(-50px));
+    opacity: 0;
+  }
+}

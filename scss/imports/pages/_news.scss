@@ -1,0 +1,94 @@
+.news {
+  .general-banner {
+    position: relative;
+    background-image: url(../img/news/banner_news.jpg);
+    .container {
+      @include tablet {
+        padding: 260px 150px 0 150px;
+      }
+      @include mobile {
+        padding: unset;
+        padding-top: 200px;
+      }
+      padding: 260px 85px 0 85px;
+      height: 100%;
+      width: 100%;
+      .general__box {
+        .general-title {
+          @include mobile {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 88%;
+            font-size: 22px;
+          }
+          @include mobile_lc {
+            left: unset;
+            transform: none;
+            width: 100%;
+            left: 11.5%;
+          }
+          position: absolute;
+          color: $white-cl;
+          font-size: 26px;
+        }
+        .line {
+          @include mobile {
+            width: 90%;
+          }
+          @include mobile_lc {
+            width: 94%;
+          }
+          height: 1px;
+          background-color: $white-cl;
+          width: 100%;
+          margin-top: 90px;
+        }
+      }
+    }
+  }
+  .card {
+    .container {
+      @include tablet {
+        margin-top: 0;
+        padding: 0 0 80px 0;
+      }
+      @include mobile {
+        padding: 0 15px;
+      }
+      padding: 0 85px 80px 85px;
+      margin-top: -100px;
+      &__card {
+        @include mobile {
+          margin-top: -170px;
+        }
+        .wrap-card {
+          @include tablet {
+            margin-right: 0;
+          }
+          .card__box {
+            @include tablet {
+              margin-right: 0;
+            }
+            @include mobile_lc {
+              margin-bottom: 40px;
+            }
+            &:hover img {
+              @include transform(translate(-50%, -50%) scale(1.2));
+            }
+            h3,
+            p,
+            .button {
+              @include mobile {
+                margin-left: 0;
+                margin-bottom: 20px;
+              }
+
+              margin-left: 20px;
+              margin-bottom: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
