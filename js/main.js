@@ -30,6 +30,7 @@ $('.mobile-nav .menu').on('click', (e) => {
     e.stopPropagation();
     $('.menu-fixed').addClass('active');
     allSections.addClass('move');
+    body.css('position', 'fixed');
 })
 
 $('.menu-fixed .menu').on('click', (e) => {
