@@ -18,10 +18,13 @@ body {
   @include text($fz-text, $font-stack, $lh-text, $text-cl, uppercase, bold);
   background: $white-cl;
   position: relative;
+  @include transition($t $cubic);
   // @include custom-scrollbar();
   .mainwrapper {
+    @include transition($t $cubic);
     width: 100%;
     margin: auto;
+    overflow: hidden;
   }
   @include desktop {
   }

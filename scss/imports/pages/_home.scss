@@ -21,7 +21,6 @@
   height: 100vh;
   overflow: hidden;
   margin-bottom: 165px;
-  @include transition($t $cubic);
   &__item {
     height: 100%;
     width: 100%;
@@ -125,7 +124,6 @@
 
 // Place
 .place {
-  @include transition($t $cubic);
   @include tablet {
     --pad-top: 105px;
   }

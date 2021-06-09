@@ -17,18 +17,19 @@ $(window).on('load', function () {
 
 // Menu left
 let menuLeft = $('.menu__left');
-let slider = $('.slider');
-let homePlace = $('.place');
+let allSections = $('.mainwrapper');
+let body = $('body');
 menuLeft.on('click', (e) => {
     e.stopPropagation();
     $('.menu-fixed').toggleClass('active');
-    slider.addClass('move');
-    homePlace.addClass('move');
+    allSections.addClass('move');
+    body.css('position', 'fixed');
 })
 
 $('.mobile-nav .menu').on('click', (e) => {
     e.stopPropagation();
     $('.menu-fixed').addClass('active');
+    allSections.addClass('move');
 })
 
 $('.menu-fixed .menu').on('click', (e) => {
@@ -40,14 +41,14 @@ $('.menu-fixed .menu').on('click', (e) => {
 $('.cancel').on('click', (e) => {
     e.preventDefault()
     $('.menu-fixed').removeClass('active');
-    slider.removeClass('move');
-    homePlace.removeClass('move');
+    allSections.removeClass('move');
+    body.css('position', 'static');
 })
 
 $(document).on('click', (e) => {
     $('.menu-fixed').removeClass('active');
-    slider.removeClass('move');
-    homePlace.removeClass('move');
+    allSections.removeClass('move');
+    body.css('position', 'static');
 })
 
 // Scroll menu visible

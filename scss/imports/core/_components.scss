@@ -744,6 +744,9 @@
 }
 
 .move {
+  @include mobile {
+    @include transform(translateX(200px));
+  }
   @include transform(translateX(300px));
   @include transition($t $cubic);
 }
