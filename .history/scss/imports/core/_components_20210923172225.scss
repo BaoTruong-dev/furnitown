@@ -1,0 +1,770 @@
+.img-title {
+  h4 {
+    margin-bottom: 30px;
+  }
+}
+
+.pd-sec {
+  padding-top: 170px;
+}
+.pad-part {
+  padding-top: 60px;
+}
+
+.menu__left {
+  &.--banner {
+    @include desktop-large {
+      top: 361px;
+    }
+  }
+  @include tablet {
+    --size: 150px;
+    top: 40vh;
+    &.ipadpro {
+      top: 30vh;
+    }
+  }
+  @include tablet_lc {
+    display: none;
+  }
+  @include mobile {
+    display: none;
+  }
+
+  --size: 179px;
+  background-color: $primary-cl;
+  width: var(--size);
+  height: var(--size);
+  position: absolute;
+  z-index: 999;
+  top: 50vh;
+  cursor: pointer;
+  @include transform(translateY(-50%));
+  @include transition($t $cubic);
+  &:hover .wrap {
+    @include hidden;
+    @include transition($t $cubic);
+    left: 80%;
+  }
+  &:hover .hover {
+    @include visible;
+    width: 120%;
+    @include transition($t $cubic);
+  }
+  &:hover .hover__wrap--img {
+    @include transform(translateX(20px));
+    @include transition($t $cubic);
+  }
+  &:hover .hover__wrap--text {
+    @include transform(translateX(-20px));
+    @include transition($t $cubic);
+  }
+  &:hover .hover__wrap--text::after {
+    @include tablet {
+      width: 70px;
+    }
+    width: 90px;
+    @include transition($t $cubic);
+  }
+  .wrap {
+    @include transition($t $cubic);
+    @include mid;
+  }
+  .hover {
+    @include transition($t $cubic);
+    @include hidden;
+    width: 100%;
+    height: 100%;
+    background-color: $white-cl;
+    @include midFlex;
+    &__wrap {
+      img {
+        @include tablet {
+          width: 70%;
+        }
+        margin-bottom: 20px;
+        @include transition($t $cubic);
+        @include transform(translateX(0));
+        filter: brightness(0%);
+        -webkit-filter: brightness(0%);
+        -moz-filter: brightness(0%);
+      }
+      p {
+        @include desktop {
+          font-size: 100%;
+        }
+        @include tablet {
+          font-size: 80%;
+        }
+        @include transform(translateX(10px));
+        position: relative;
+        @include transition($t $cubic);
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          background-color: $black-cl;
+          display: block;
+          width: 0;
+          height: 1px;
+        }
+      }
+    }
+  }
+}
+
+.menu-hamburger {
+  @include tablet {
+    width: 30px;
+  }
+  cursor: pointer;
+  height: 25px;
+  width: 40px;
+  position: relative;
+  &--line {
+    content: "";
+    position: absolute;
+    left: 50%;
+    @include transform(translateX(-50%));
+    width: 100%;
+    height: 0.5px;
+    background-color: $white-cl;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      width: 100%;
+      height: 0.5px;
+      background-color: $white-cl;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      height: 0.5px;
+      background-color: $white-cl;
+    }
+  }
+}
+.menu-fixed {
+  &.active {
+    @include visible;
+    @include transition($t $cubic);
+  }
+  &.active > .menu {
+    left: 0;
+    @include transition($t $cubic);
+  }
+  background-color: rgba($black-cl, 0.8);
+  position: fixed;
+  @include hidden;
+  @include transition($t $cubic);
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  .menu {
+    @include tablet {
+      width: 320px;
+    }
+    @include mobile {
+      width: 250px;
+    }
+    position: absolute;
+    background-color: #1c2126;
+    @include transition($t $cubic);
+    left: -20%;
+    width: 350px;
+    height: 100%;
+    padding: 30px;
+    &__social {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & > a {
+        @include mobile {
+          font-size: 8px;
+        }
+        color: $white-cl;
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+      .social {
+        @include midFlex;
+        .link {
+          @include mobile {
+            font-size: 8px;
+          }
+          color: $white-cl;
+          font-size: 10px;
+          letter-spacing: 1px;
+          margin-right: 10px;
+        }
+        .icon {
+          &__fb {
+            margin-bottom: 5px;
+          }
+          width: 15px;
+          svg {
+            width: 100%;
+            height: auto;
+            * {
+              fill: $white-cl;
+            }
+          }
+        }
+      }
+    }
+    &__link {
+      display: flex;
+      margin-top: 30px;
+      .icon {
+        position: relative;
+        width: 60px;
+        height: 82px;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          @include transform(translateY(-50%));
+          background-color: $white-cl;
+          width: 100%;
+          height: 0.5px;
+        }
+        a {
+          position: relative;
+          left: 50%;
+          @include transform(translateX(-50%));
+          width: 30px;
+          svg {
+            width: 100%;
+            height: auto;
+          }
+          &.cancel {
+            &:hover svg {
+              * {
+                fill: $white-cl;
+                @include transition(0.3s $cubic);
+              }
+            }
+            svg {
+              * {
+                fill: #32373c;
+                @include transition(0.3s $cubic);
+              }
+            }
+          }
+        }
+      }
+      .link {
+        ul {
+          li {
+            @include tablet_lc {
+              margin-bottom: 20px;
+            }
+            @include mobile_lc {
+              margin-bottom: 20px;
+            }
+            position: relative;
+            margin: 0 0 40px 40px;
+            @include transition($t $cubic);
+            &::after {
+              content: "";
+              display: block;
+              background-color: $white-cl;
+              width: calc(100% + 40px);
+              position: absolute;
+              height: 0.5px;
+              @include hidden;
+              @include transition($t);
+              @include transform(translateX(-40px) scale(0));
+              @include transform-origin(left center);
+            }
+            &:hover::after {
+              @include transition($t);
+              @include transform-origin(left right);
+              @include visible;
+              @include transform(translateX(0) scale(1));
+            }
+            &:hover a {
+              color: $white-cl;
+              @include transition(0.3s $cubic);
+            }
+            a {
+              @include tablet {
+                font-size: 18px;
+              }
+              @include tablet_lc {
+                font-size: 12px;
+              }
+              @include mobile {
+                font-size: 12px;
+              }
+              color: #6e7178;
+              font-family: ellm;
+              font-size: 20px;
+              @include transition(0.3s $cubic);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.quote-text {
+  @include tablet_lc {
+    display: none;
+  }
+  @include mobile {
+    display: none;
+  }
+  p {
+    @include mobile {
+      line-height: 30px;
+      max-width: 250px;
+      margin: 0 auto;
+    }
+    span {
+      @include mobile {
+        display: unset;
+      }
+      margin: 25px 0;
+      display: inline-block;
+    }
+    max-width: 392px;
+    font-weight: 400;
+    text-transform: none;
+    strong {
+      text-transform: capitalize;
+    }
+  }
+
+  &.italic {
+    @include mobile {
+      text-align: center;
+    }
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: right;
+    p {
+      color: $white-cl;
+      font-style: italic;
+      z-index: 2;
+    }
+
+    strong {
+      color: $yellow-cl;
+    }
+    .img {
+      @include desktop-medium {
+        right: -5%;
+      }
+      @include desktop {
+        right: 0;
+      }
+      @include tablet {
+        bottom: -140%;
+      }
+      @include mobile {
+        bottom: -80%;
+      }
+      position: absolute;
+      right: -10%;
+      bottom: -50%;
+      z-index: 1;
+    }
+  }
+}
+
+.general-title {
+  font-family: ellm;
+  font-size: 44px;
+  letter-spacing: 4px;
+  font-weight: 300;
+}
+
+.text__box {
+  &.--mobile {
+    display: none;
+    @include tablet_lc {
+      display: block;
+      color: $black-cl;
+    }
+    @include mobile {
+      display: block;
+      color: $black-cl;
+    }
+  }
+  text-align: center;
+  color: $white-cl;
+  position: relative;
+  &::after {
+    @include tablet {
+      width: 120%;
+      top: 95px;
+    }
+    @include tablet_lc {
+      background-color: $black-cl;
+      top: 66px;
+      width: 100%;
+    }
+    @include mobile {
+      background-color: $black-cl;
+      top: 66px;
+      width: 100%;
+    }
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: $white-cl;
+    width: 150%;
+    height: 0.5px;
+    top: 120px;
+    left: 50%;
+    @include transform(translateX(-50%));
+    @include transition(0.4s);
+  }
+  h2 {
+    @include tablet {
+      font-size: 60px;
+    }
+    @include tablet_lc {
+      font-size: 40px;
+    }
+    @include mobile {
+      font-size: 40px;
+    }
+    font-family: ellm;
+    font-weight: 300;
+    font-size: 80px;
+    position: relative;
+  }
+  p {
+    @include mobile {
+      line-height: 20px;
+      width: 80%;
+      margin: 20px auto;
+    }
+    margin: 25px 0 55px 0;
+  }
+}
+
+.normal-text {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: none;
+  font-weight: 300;
+}
+
+.line {
+  height: 1px;
+  background-color: $black-cl;
+  margin: 0 auto 25px auto;
+}
+
+.general__box {
+  display: flex;
+  justify-content: space-between;
+  @include mobile {
+    flex-direction: column;
+  }
+  &-text {
+    @include mobile {
+      width: 100%;
+    }
+    width: 60%;
+    .general-title {
+      font-size: 26px;
+    }
+    .normal-text {
+      font-size: 12px;
+      margin: 30px 0 35px 0;
+      line-height: 26px;
+      width: 100%;
+      &::first-line {
+        line-height: normal;
+      }
+    }
+  }
+  .button {
+    @include mobile {
+      width: 100%;
+    }
+    width: 40%;
+  }
+}
+
+.general-banner {
+  @include tablet {
+    height: 437px;
+  }
+  height: 450px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container__card {
+  --textSize: 12px;
+  --space: 7.5px;
+  @include tablet {
+    padding-bottom: 70px;
+  }
+  @include tablet_lc {
+    padding-bottom: 40px;
+  }
+  @include mobile {
+    padding-bottom: 40px;
+  }
+  padding: 65px 0 100px 0;
+  position: relative;
+  .wrap-card {
+    @include midFlex;
+    @include tablet {
+      flex-direction: column;
+    }
+    @include tablet_lc {
+      flex-direction: column;
+    }
+    @include mobile {
+      flex-direction: column;
+    }
+
+    .card__box {
+      cursor: pointer;
+      @include transition($t);
+      position: relative;
+      @include tablet {
+        text-align: center;
+        margin: 30px 0;
+      }
+      @include tablet_lc {
+        margin-bottom: 40px;
+      }
+      @include mobile_lc {
+        margin-bottom: 40px;
+      }
+      &:not(:last-child) {
+        @include tablet_lc {
+          margin-right: 0;
+        }
+        @include mobile {
+          margin-right: 0;
+        }
+        @include mobile_lc {
+          margin-right: 0;
+        }
+        margin-right: 15px;
+        &::after {
+          @include tablet {
+            display: none;
+          }
+          @include tablet_lc {
+            display: none;
+          }
+          @include mobile_lc {
+            display: none;
+          }
+          content: "";
+          display: block;
+          position: absolute;
+          width: 1px;
+          height: 100%;
+          right: -7.5px;
+          top: 0;
+          background-color: #d7d7d7;
+        }
+      }
+      &:hover {
+        background-color: $yellow-cl;
+        color: $white-cl;
+      }
+      &:hover .button > svg {
+        * {
+          fill: $white-cl;
+        }
+      }
+      &:hover .button > a {
+        color: $white-cl;
+      }
+      &:hover .img img {
+        @include transform(translate(-50%, -50%) scale(1.2));
+      }
+      width: 100%;
+
+      .img {
+        height: 205px;
+        position: relative;
+        margin-bottom: 40px;
+        overflow: hidden;
+        img {
+          @include imgMid;
+          max-height: 100%;
+          @include transition($t);
+        }
+      }
+      h3 {
+        font-size: var(--textSize);
+      }
+      p {
+        font-size: var(--textSize);
+        margin: 30px 0;
+        letter-spacing: 0;
+      }
+      & > .button {
+        &.--up {
+          margin-bottom: 40px;
+        }
+        display: inline-flex;
+        a {
+          font-size: var(--textSize);
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  .paging {
+    position: absolute;
+    left: 50%;
+    @include transform(translateX(-50%));
+    @include midFlex;
+    @include tablet {
+      margin-top: 50px;
+    }
+    @include mobile {
+      margin-top: -10px;
+    }
+    margin-top: 85px;
+    font-size: var(--textSize);
+    a {
+      margin: 0 10px;
+      color: #232323;
+      padding: 8px 12px;
+      display: block;
+      @include transition(0.4s);
+      &.active {
+        background-color: #ebebeb;
+        border: 1px solid $black-cl;
+      }
+    }
+  }
+}
+
+.--reverse {
+  @include transform(rotate(180deg));
+}
+
+.img__box {
+  &.--kitchen {
+    height: 320px;
+  }
+  cursor: pointer;
+  z-index: 1;
+}
+
+.popup-contact {
+  &.active {
+    opacity: 1;
+    @include transition($t);
+    @include visible;
+  }
+  background-color: rgba($black-cl, 0.7);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  @include hidden;
+  @include transition($t);
+  @include midFlex;
+  &__wrap {
+    background-color: $white-cl;
+    position: relative;
+    @include mobile {
+      max-width: 250px;
+    }
+    max-width: 400px;
+    min-height: 160px;
+    -webkit-box-shadow: 5px 5px 20px 3px #000000;
+    box-shadow: 5px 5px 20px 3px #000000;
+
+    .close {
+      position: absolute;
+      right: -15px;
+      top: -10px;
+      background-color: black;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      color: $white-cl;
+      @include midFlex;
+      cursor: pointer;
+      @include transition($t);
+      &:hover {
+        background-color: $white-cl;
+        color: $black-cl;
+        @include transition($t);
+      }
+    }
+    &--title {
+      padding: 15px 0 10px 0;
+      border-bottom: 1px solid $black-cl;
+      h3 {
+        font-size: 16px;
+        font-weight: 300;
+        text-align: center;
+      }
+    }
+    &--box {
+      padding: 20px 20px 30px 10px;
+      .info {
+        text-transform: none;
+        margin-bottom: 10px;
+        p {
+          font-weight: 300;
+          a {
+            display: inline-block;
+            color: $yellow-cl;
+          }
+        }
+      }
+      .email {
+        text-transform: none;
+        a {
+          font-weight: 300;
+          color: $yellow-cl;
+        }
+      }
+    }
+  }
+}
+
+.move {
+  @include mobile {
+    @include transform(translateX(200px));
+  }
+  @include transform(translateX(300px));
+  @include transition($t $cubic);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid transparent;
+  -webkit-text-fill-color: $white-cl;
+  // -webkit-box-shadow: 0 0 0px 1000px none inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

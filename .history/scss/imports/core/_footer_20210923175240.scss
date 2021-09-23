@@ -1,0 +1,133 @@
+footer.home {
+  height: 945px !important;
+  margin-top: -355px;
+}
+
+footer {
+  background-color: $primary-cl;
+  color: $white-cl;
+  height: 530px;
+  .container {
+    position: relative;
+    height: 100%;
+    .pen-img {
+      position: absolute;
+      top: 32%;
+      right: -5%;
+      z-index: 1;
+      @include desktop-medium {
+        right: -5%;
+      }
+      @include desktop {
+        right: 0;
+      }
+      @include tablet {
+        bottom: -140%;
+      }
+      @include mobile {
+        bottom: -80%;
+      }
+    }
+    .info {
+      &.--home {
+        top: 58%;
+        @include mobile {
+          top: 45%;
+        }
+      }
+      @include mobile {
+        top: 4%;
+        .info__logo {
+          margin-top: 50px;
+        }
+      }
+
+      position: absolute;
+      left: 50%;
+      top: 14%;
+      @include transform(translateX(-50%));
+      width: 100%;
+      &::after {
+        @include desktop {
+          width: 35%;
+        }
+        @include tablet {
+          width: 40%;
+        }
+        @include mobile {
+          width: 25%;
+          right: 5%;
+        }
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 43%;
+        background-color: $yellow-cl;
+        top: 22%;
+        right: 0;
+      }
+      &::before {
+        @include desktop {
+          width: 35%;
+        }
+        @include tablet {
+          width: 40%;
+        }
+        @include mobile {
+          width: 25%;
+          left: 5%;
+        }
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 43%;
+        background-color: $yellow-cl;
+        top: 22%;
+        left: 0;
+      }
+
+      &__text {
+        @include mobile {
+          span {
+            display: inline-block;
+            margin: 0 auto 20px 0;
+          }
+          span:nth-child(1) {
+            width: 180px;
+          }
+          span:nth-child(3) {
+            width: 250px;
+          }
+        }
+        text-align: center;
+        line-height: 26px;
+        font-weight: 300;
+        margin-top: 50px;
+      }
+      .backtop {
+        @include mobile {
+          right: -18px;
+          bottom: -10%;
+        }
+        position: absolute;
+        right: -40px;
+        bottom: -50%;
+        @include transform(rotate(90deg));
+        a {
+          color: #9b9c9d;
+          font-weight: 300;
+        }
+        &::after {
+          animation: moveTopInf infinite 2s;
+          content: "";
+          position: absolute;
+          background-color: $yellow-cl;
+          height: 1px;
+          width: 140px;
+          bottom: 50%;
+          left: -170px;
+        }
+      }
+    }
+  }
+}

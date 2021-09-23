@@ -1,0 +1,291 @@
+// Slider
+.slider {
+  @include desktop {
+    margin-bottom: 140px;
+  }
+  @include tablet {
+    margin-bottom: 50px;
+    height: 80vh;
+  }
+  @include mobile {
+    height: 50vh;
+  }
+  @include tablet_lc {
+    margin-bottom: 50px;
+  }
+  @include mobile_lc {
+    height: 100vh;
+    margin-bottom: 50px;
+  }
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  margin-bottom: 165px;
+  &__item {
+    height: 100%;
+    width: 100%;
+    &-info {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      img {
+        @include imgMid;
+      }
+      .text__box {
+        h2,
+        p,
+        div {
+          @include hidden;
+          @include transition(0.6s);
+          @include transition-delay(--delay);
+          @include transform(translateY(70px));
+          opacity: 0;
+        }
+        @include mid;
+        @include tablet_lc {
+          display: none;
+        }
+        @include mobile {
+          display: none;
+        }
+        &::after {
+          @include transform(scale(0) translateX(-50%));
+          @include transition(1.5s);
+          opacity: 0;
+        }
+      }
+      &.is-selected {
+        .text__box {
+          h2,
+          p,
+          div {
+            @include visible;
+            @include transition(0.6s);
+            transition-delay: var(--delay);
+            @include transform(translateY(0));
+            opacity: 1;
+          }
+          &::after {
+            @include transform(scale(1) translateX(-50%));
+            opacity: 1;
+            @include transition(1.5s);
+          }
+          p {
+            @include tablet {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__bottom {
+    @include tablet_lc {
+      display: none;
+    }
+    @include mobile {
+      display: none;
+    }
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    @include transform(translateX(-50%));
+    &::before {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 120px;
+      background-color: $black-cl;
+      left: 50%;
+      @include transform(translateX(-50%) rotate(90deg));
+      top: -120%;
+    }
+    &-mouse {
+      position: relative;
+      margin-bottom: 10px;
+      height: 35px;
+      .point {
+        width: 5px;
+        position: absolute;
+        left: 50%;
+        top: 10px;
+        @include transform(translateX(-50%));
+        animation: moveDownInf infinite 1.5s;
+      }
+      .mouse {
+        width: 20px;
+        position: absolute;
+        left: 50%;
+        @include transform(translateX(-50%));
+      }
+    }
+  }
+}
+
+// Place
+.place {
+  @include tablet {
+    --pad-top: 105px;
+  }
+
+  .container {
+    h4 {
+      padding-top: 5px;
+    }
+    .row {
+      .place__element {
+        @include tablet {
+          padding-top: 0 !important;
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .col-lg-6 {
+        padding-top: var(--pad-top);
+        height: 510px;
+        .img-title {
+          &.--note {
+            @include tablet_lc {
+              padding-top: 105px;
+            }
+            @include mobile_lc {
+              padding-top: 105px;
+            }
+          }
+          height: 100%;
+          width: 100%;
+        }
+        .img-title.small {
+          @include tablet {
+            padding-top: var(--pad-top);
+          }
+          @include tablet_lc {
+            padding-top: 80px;
+          }
+          @include mobile_lc {
+            padding-top: 80px;
+          }
+          padding-top: 100px;
+        }
+      }
+      .col-lg-6.--third {
+        @include tablet {
+          padding-top: 0;
+        }
+        height: 612px;
+        .img-title.small-second {
+          @include tablet {
+            padding-top: var(--pad-top);
+          }
+          padding-bottom: 100px;
+        }
+      }
+
+      .col-lg-12 {
+        height: 420px;
+        overflow: hidden;
+        .img-title {
+          margin-top: 50px;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.img__box {
+  overflow: hidden;
+  &:hover &--text {
+    @include visible;
+    @include transition($t);
+    @include transform(scale(1));
+  }
+  position: relative;
+  height: 100%;
+  width: 100%;
+  &:hover .img > a > img {
+    @include transform(translate(-50%, -50%) scale(1.2));
+  }
+  .img {
+    // &.--kitchen {
+    // }
+    width: 100%;
+    height: 100%;
+    position: relative;
+    a {
+      display: block;
+      padding-bottom: 100%;
+      width: 100%;
+      position: relative;
+      img {
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%) scale(1));
+        min-width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+        @include transition($t);
+        z-index: 0;
+      }
+    }
+  }
+
+  &--text {
+    @include transform(scale(0.8));
+    @include hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include transition($t);
+    width: 100%;
+    height: 100%;
+    color: $white-cl;
+    z-index: 2;
+    .box {
+      @include midFlex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      @include transform(translateY(50px));
+      @include transition($t);
+      svg {
+        width: 30px;
+        * {
+          fill: $white-cl;
+        }
+      }
+      p {
+        text-align: center;
+        margin: 15px 0 30px 0;
+      }
+      .more {
+        width: unset !important;
+        height: unset !important;
+        @include midFlex;
+        a {
+          color: $white-cl;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  &:hover .img__box--text.yellow {
+    background-color: rgba($yellow-cl, 0.6);
+    @include transition($t);
+    @include transform(scale(1));
+    @include visible;
+  }
+  &:hover .img__box--text.blue {
+    background-color: rgba($primary-cl, 0.6);
+    @include transition($t);
+    @include transform(scale(1));
+    @include visible;
+  }
+  &:hover .box {
+    @include transform(translateY(0));
+  }
+}
