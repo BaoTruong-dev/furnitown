@@ -2,7 +2,6 @@
   .general-banner {
     position: relative;
     background: url(../img/news/banner_news.jpg) center center no-repeat;
-    background-size: cover;
 
     .container {
       @include mobile {
