@@ -113,6 +113,11 @@
           }
         }
       }
+      .paging {
+        @include mobile {
+          margin-top: 40px;
+        }
+      }
     }
   }
 }

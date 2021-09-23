@@ -616,9 +616,12 @@
     }
   }
   .paging {
+    position: absolute;
+    left: 50%;
+    @include transform(translateX(-50%));
     @include midFlex;
-    font-size: var(--textSize);
     margin-top: 40px;
+    font-size: var(--textSize);
     a {
       margin: 0 10px;
       color: #232323;
