@@ -15,11 +15,6 @@ header {
   display: flex;
   align-items: center;
   & > .container-fluid {
-    &.--news {
-      @include desktop {
-        display: none;
-      }
-    }
     @include mobile {
       display: none;
     }
@@ -45,8 +40,8 @@ header {
   }
   .main-menu {
     &.--news {
-      @include desktop {
-        @include visible;
+      @include tablet {
+        @include hidden;
       }
     }
     @include mobile {

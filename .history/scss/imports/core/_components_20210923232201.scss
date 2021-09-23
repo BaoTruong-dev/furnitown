@@ -15,7 +15,7 @@
   --size: 179px;
   @include desktop {
     --size: 150px;
-    top: 420px;
+    top: 400px;
   }
   @include tablet_lc {
     display: none;
@@ -27,16 +27,13 @@
     @include maxW(2000px) {
       top: 361px;
     }
-    @include desktop {
-      --size: 150px;
-      top: 374px;
-    }
     &.--news {
       @include desktop {
         display: none;
       }
     }
   }
+
   background-color: $primary-cl;
   width: var(--size);
   height: var(--size);

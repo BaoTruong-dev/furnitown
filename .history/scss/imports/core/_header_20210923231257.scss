@@ -45,7 +45,7 @@ header {
   }
   .main-menu {
     &.--news {
-      @include desktop {
+      @include tablet {
         @include visible;
       }
     }

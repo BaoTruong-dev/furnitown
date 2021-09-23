@@ -1,8 +1,11 @@
 .news {
   .general-banner {
     position: relative;
-    background: url(../img/news/banner_news.jpg) center center;
+    background-image: url(../img/news/banner_news.jpg);
     .container {
+      @include tablet {
+        max-width: 800px;
+      }
       @include mobile {
         padding: unset;
         padding-top: 200px;

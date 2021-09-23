@@ -15,7 +15,7 @@
   --size: 179px;
   @include desktop {
     --size: 150px;
-    top: 420px;
+    top: 400px;
   }
   @include tablet_lc {
     display: none;
@@ -25,11 +25,7 @@
   }
   &.--banner {
     @include maxW(2000px) {
-      top: 361px;
-    }
-    @include desktop {
-      --size: 150px;
-      top: 374px;
+      top: 360.5px;
     }
     &.--news {
       @include desktop {
@@ -37,6 +33,7 @@
       }
     }
   }
+
   background-color: $primary-cl;
   width: var(--size);
   height: var(--size);

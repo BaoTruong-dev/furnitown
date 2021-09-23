@@ -12,24 +12,13 @@
 }
 
 .menu__left {
-  --size: 179px;
-  @include desktop {
-    --size: 150px;
-    top: 420px;
-  }
-  @include tablet_lc {
-    display: none;
-  }
-  @include mobile {
-    display: none;
-  }
   &.--banner {
     @include maxW(2000px) {
       top: 361px;
     }
     @include desktop {
       --size: 150px;
-      top: 374px;
+      top: 420px !;
     }
     &.--news {
       @include desktop {
@@ -37,6 +26,18 @@
       }
     }
   }
+  --size: 179px;
+  @include desktop {
+    --size: 150px;
+    top: 420px !;
+  }
+  @include tablet_lc {
+    display: none;
+  }
+  @include mobile {
+    display: none;
+  }
+
   background-color: $primary-cl;
   width: var(--size);
   height: var(--size);

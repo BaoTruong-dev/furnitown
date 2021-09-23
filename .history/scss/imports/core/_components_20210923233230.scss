@@ -28,8 +28,11 @@
       top: 361px;
     }
     @include desktop {
+      --size: 180px;
+    }
+    @include desktop {
       --size: 150px;
-      top: 374px;
+      top: 420px;
     }
     &.--news {
       @include desktop {

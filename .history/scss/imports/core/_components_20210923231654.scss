@@ -12,10 +12,15 @@
 }
 
 .menu__left {
-  --size: 179px;
   @include desktop {
+    top: 40vh;
+  }
+  @include tablet {
     --size: 150px;
-    top: 420px;
+    top: 40vh;
+    &.ipadpro {
+      top: 30vh;
+    }
   }
   @include tablet_lc {
     display: none;
@@ -27,16 +32,13 @@
     @include maxW(2000px) {
       top: 361px;
     }
-    @include desktop {
-      --size: 150px;
-      top: 374px;
-    }
     &.--news {
       @include desktop {
         display: none;
       }
     }
   }
+  --size: 179px;
   background-color: $primary-cl;
   width: var(--size);
   height: var(--size);

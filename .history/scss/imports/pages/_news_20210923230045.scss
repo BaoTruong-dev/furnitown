@@ -1,7 +1,7 @@
 .news {
   .general-banner {
     position: relative;
-    background: url(../img/news/banner_news.jpg) center center;
+    background: url(../img/news/banner_news.jpg);
     .container {
       @include mobile {
         padding: unset;
