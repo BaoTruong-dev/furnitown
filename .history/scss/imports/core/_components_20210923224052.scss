@@ -13,8 +13,8 @@
 
 .menu__left {
   &.--banner {
-    @include maxW(2000px) {
-      top: 360px;
+    @include maxW(2000) {
+      top: 365px;
     }
   }
   @include tablet {
